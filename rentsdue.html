@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    {MobileAppHeaders}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>
+        {Title}
+        {block:SearchPage}
+            ({lang:Search results for SearchQuery})
+        {/block:SearchPage}
+        {block:PermalinkPage}
+            {block:PostSummary} — {PostSummary}{/block:PostSummary}
+        {/block:PermalinkPage}
+    </title>
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    {block:Hidden}
+        <meta name="if:Infinite Scroll" content="1">
+    {/block:Hidden}
+    
+    <!-- Theme Configuration -->
+    <meta name="image:Hidden GIF" content="https://static.tumblr.com/pgcfs50/qTdpxmqb5/cage-yeah.gif"/>
+    <meta name="image:No Search Results GIF" content="https://static.tumblr.com/pgcfs50/By5py5y8q/no-smith.gif"/>
+    <meta name="text:Left Button Label" content="whaaat"/>
+    <meta name="image:Left Popup GIF" content="https://static.tumblr.com/pgcfs50/FtIpxmqer/fire-jusdoit.gif"/>
+    <meta name="text:Right Button Label" content="help"/>
+    <meta name="image:Right Popup GIF" content="https://static.tumblr.com/pgcfs50/keOpxmqbh/leya-help.gif"/>
+    <meta name="text:Box Label 1" content="the instagram"/>
+    <meta name="text:Box Link 1" content="https://..."/>
+    <meta name="text:Box Label 2" content="the twitter"/>
+    <meta name="text:Box Link 2" content="https://..."/>
+    <meta name="text:Box Label 3" content="the facebook"/>
+    <meta name="text:Box Link 3" content="https://..."/>
+    <meta name="text:Box Label 4" content="the pinterest"/>
+    <meta name="text:Box Link 4" content="https://..."/>
+    <meta name="text:Top Blinking Text" content="Everybody is a Genius. But If You Judge a Fish by Its Ability to Climb a Tree,
+                                                It Will Live Its Whole Life Believing that It is Stupid."/>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+    <link rel="stylesheet" href="https://static.tumblr.com/xeccbfq/9Qenv9yn8/normalize.min.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/kifah6n/rHspybhdg/styles.min.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/kifah6n/NcZpybl5u/rentsdue.min.css" />
+    <style type="text/css">
+        h3 {
+            {block:PermalinkPage}
+                font-family: 'Bitter';
+                letter-spacing: .3em;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: -2.457px 1.721px 0px rgba(0, 255, 0, 0.65),
+                            2.294px -3.277px 0px rgba(240, 110, 170, 0.65),
+                            0px 5px 0px rgba(0, 191, 243, 0.65);
+            {/block:PermalinkPage}
+        }
+        h3 a {
+            {/block:PermalinkPage}
+                text-decoration: none;
+            {/block:PermalinkPage}
+        }
+        ul  {
+            {block:PermalinkPage}
+                list-style: none;
+                padding-left: 0;
+                padding-top: 10px;
+                text-align: center;
+            {/block:PermalinkPage}
+        }
+        li {
+            {block:PermalinkPage}
+                padding-bottom: 10px;
+            {/block:PermalinkPage}
+        }
+        li a {
+            {block:PermalinkPage}
+                text-decoration: none;
+            {/block:PermalinkPage}
+        }
+        li a:hover {
+            {block:PermalinkPage}
+                font-weight: 600;
+                background: aqua;
+            {/block:PermalinkPage}
+        }
+        #actions {
+            {block:HomePage}
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+            {/block:HomePage}
+        }
+        .main-posts {
+            {block:Permalink}
+                border: none;
+            {/block:Permalink}
+        }
+        .post {
+            {block:IndexPage}
+                width: 100%;
+                height: auto;
+            {block:IndexPage}
+            {block:PermalinkPage}
+                min-width: 50%;
+                min-height: 200px;
+            {/block:PermalinkPage}
+        }
+        .chat ul  {
+            {block:PermalinkPage}
+                list-style: none;
+                text-align: inherit;
+                padding-top: 10px;
+            {/block:PermalinkPage}
+        }
+        .photoset {
+            {block:PermalinkPage}
+                margin: 0;
+                width: auto;
+            {block:PermalinkPage}
+        }
+        .tmblr-iframe--desktop-loggedin-controls,
+        .iframe-controls--desktop {
+            {block:PostNotes}
+                top: 100% !important;
+                margin-top: -153px;
+                margin-right: -163px;
+                -webkit-transform: scale(0.75,0.75) rotate(90deg);
+                    -ms-transform: scale(0.75,0.75) rotate(90deg);
+                        transform: scale(0.75,0.75) rotate(90deg);
+            {/block:PostNotes}
+        }
+        {CustomCSS}
+    </style>
+    
+    <!-- Theme Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/kifah6n/yYqpybi3h/scripts.min.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/kifah6n/SMOpybksi/rentsdue.min.js"></script>
+    {block:IfInfiniteScroll}
+    	<script type="text/javascript" src="https://static.tumblr.com/kifah6n/Lqhpybjzq/infinite-scroll.min.js"></script>
+    {/block:IfInfiniteScroll}
+</head>
+
+<!-- Theme Structure -->
+<body>
+    <header>
+        <div class="row top-bar">
+            <div class="blink-text">
+                <p id="top-bar-text">{text:Top Blinking Text}</p>
+            </div>
+        </div>
+        <div class="row row-header">
+            <div class="column column-header">
+                <div class="nav-block">
+                    <div class="nav-spin">
+                        <div class="spin-wrap">
+                            <div class="spin-up">
+                                <div class="spin-block">
+                                {block:HasPages}
+                                    {block:Pages}
+                                        <a href="{URL}">
+                                            <button type="button" class="btn-default btn-click">{Label}</button>
+                                        </a><br>
+                                    {/block:Pages}
+                                {/block:HasPages}
+                                <a href="/random">
+                                    <button type="button" class="btn-default btn-click">Random</button>
+                                </a><br>
+                                {block:AskEnabled}
+                                    <a href="/ask">
+                                        <button type="button" class="btn-default btn-click">{AskLabel}</button>
+                                    </a><br>
+                                {/block:AskEnabled}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/search" method="get" class="form">
+                    <input type="text" name="q" class="form-field" value="{SearchQuery}"/>
+                    <input type="submit" class="form-button btn-click" value="Search"/>
+                    </form>
+                </div>
+            </div>
+            <div class="column column-header column-description no-mobile">
+                {block:Description}
+                    <p id="description">{Description}</p>
+                {/block:Description}
+            </div>
+            <div class="column column-header column-sm no-mobile">
+                <div class="box-links">
+                    <div id="box-link1" class="draggable box-style">
+                        <a href="{text:Box Link 1}" target="_blank">
+                            <span>{text:Box Label 1}</span>
+                        </a>
+                    </div>
+                    <div id="box-link2" class="draggable box-style">
+                        <a href="{text:Box Link 2}" target="_blank">
+                            <span>{text:Box Label 2}</span>
+                        </a>
+                    </div>
+                    <div id="box-link3" class="draggable box-style">
+                        <a href="{text:Box Link 3}" target="_blank">
+                            <span>{text:Box Label 3}</span>
+                        </a>
+                    </div>
+                    <div id="box-link4" class="draggable box-style">
+                        <a href="{text:Box Link 4}" target="_blank">
+                            <span>{text:Box Label 4}</span>
+                        </a>
+                    </div>
+                    <div id="hidden-gif">
+                        <img id="hidden-img" src="{image:Hidden GIF}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-mobile">
+                {block:Description}
+                    <p id="description">{Description}</p>
+                {/block:Description}
+            </div>
+        </div>
+        <div class="row row-title">
+            <div class="column column-title">
+                <div class="row title-bar title-bars-1">
+                    <div class="spin spin-left">
+                        <p>
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                        </p>
+                    </div>
+                </div>
+                <div class="row title"><a href="/"><h1 id="title">{Title}</h1></a></div>
+                <div class="row title-bar title-bars-2">
+                    <div class="spin spin-right">
+                        <p>
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                            {Title} !!! {Title} !!! {Title} !!! {Title} !!! {Title} !!!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="row main">
+        <div class="row side-buttons-mobile mobile">
+            <div id="mybtn" class="btn-click">
+                <div id="side-button1" class="side-button-styles" onclick="toggleModal('md01')">
+                    <span class="text-button1">{text:Left Button Label}</span>
+                </div>
+            </div>
+            <div id="mybtn" class="btn-click">
+                <div id="side-button2" class="side-button-styles" onclick="toggleModal('md02')">
+                    <span class="text-button2">{text:Right Button Label}</span>
+                </div>
+            </div>
+        </div>
+        <div id="mybtn" class="column side-buttons btn-click">
+            <div id="side-button1" class="side-button-styles" onclick="toggleModal('md01')">
+                <span class="text-button1">{text:Left Button Label}</span>
+            </div>
+        </div>
+        <div class="column main-posts">
+            {block:TagPage}
+                <div id="tags">
+                    <h3>Tags on <span>#{Tag}</span></h3>
+                </div>
+            {/block:TagPage}
+            {block:SearchPage}
+                <div id="search-results">
+                    <h3>Search Results: {SearchResultCount}</h3>
+                </div>
+            {block:NoSearchResults}
+                <div id="no-results" class="row">
+                    <img src="{image:No Search Results GIF}" />
+                </div>
+            {/block:NoSearchResults}
+            {/block:SearchPage}
+            <div id="posts">
+                {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
+                    <div class="post" id="{PostID}" url="{RelativePermalink}">
+                        <div class="post-wrapper">
+                            {block:Text}
+                                <div class="text">
+                                    {block:Title}
+                                        <h3><a href="{Permalink}">{Title}</a></h3>
+                                    {/block:Title}
+                                    {Body}
+                                </div>
+                            {/block:Text}
+                            {block:Photo}
+                                <div class="photo">
+                                    <a href="{Permalink}">
+                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                    </a>
+                                    {Caption}
+                                </div>
+                            {/block:Photo}
+                            {block:Panorama}
+                                <div class="panorama">
+                                    {LinkOpenTag}
+                                        <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                    {LinkCloseTag}
+                                    {block:Caption}
+                                        <div class="caption">{Caption}</div>
+                                    {/block:Caption}
+                                </div>
+                            {/block:Panorama}
+                            {block:Photoset}
+                                <div class="photoset">
+                                    {Photoset}
+                                    {block:Caption}
+                                        {Caption}
+                                    {/block:Caption}
+                                </div>
+                            {/block:Photoset}
+                            {block:Quote}
+                                <div class="quote">
+                                    "{Quote}"
+                                    {block:Source}
+                                        <div class="source">— {Source}</div>
+                                    {/block:Source}
+                                </div>
+                            {/block:Quote}
+                            {block:Link}
+                                <div class="link">
+                                    {block:Thumbnail}
+                                        <a href="{URL}" {Target} ></a>
+                                        <img src="{Thumbnail-HighRes}" />
+                                    {/block:Thumbnail}
+                                    <div id="title-excerpt">
+                                        {Name}
+                                    </div>
+                                    {block:Excerpt}
+                                        <div id="excerpt">{Excerpt}</div>
+                                    {/block:Excerpt}
+                                </div>
+                            {/block:Link}
+                            {block:Chat}
+                                <div class="chat">
+                                    {block:Title}
+                                        <h3><a href="{Permalink}">{Title}</a></h3>
+                                    {/block:Title}
+                                    <ul class="chat-lines">
+                                        {block:Lines}
+                                            <li class="{Alt} user_{UserNumber}">
+                                                {block:Label}
+                                                    <span class="label">{Label}</span>
+                                                {/block:Label}
+                                                <span class="lines">{Line}</span>
+                                            </li>
+                                        {/block:Lines}
+                                    </ul>
+                                </div>
+                            {/block:Chat}
+                            {block:Answer}
+                                <div class="answer">
+                                    <div class="question">{Question}</div>
+                                    <span class="asker">
+                                        <img src="{AskerPortraitURL-24}"/>
+                                        {Asker}
+                                    </span>
+                                    <div class="answer">{Answer}</div>
+                                </div>
+                            {/block:Answer}
+                            {block:Video}
+                                {block:Caption}
+                                    {Caption}
+                                {/block:Caption}
+                                <div class="videowrapper {TagAsClasses}">
+                                    {Video-700}
+                                </div>
+                                {block:ContentSource}
+                                    <div id="source">
+                                        (via <a href="{SourceURL}">
+                                            {block:SourceLogo}
+                                                <img src="{BlackLogoURL}" width="{LogoWidth}" 
+                                                        height="{LogoHeight}" alt="{SourceTitle}" />
+                                            {/block:SourceLogo}
+                                            {block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}
+                                        </a>)
+                                    </div>
+                                {/block:ContentSource}
+                            {/block:Video}
+                            {block:Audio}
+                                <div class="audio">
+                                    {block:AudioEmbed}
+                                        {AudioEmbed}
+                                    {/block:AudioEmbed}
+                                    {block:Caption}
+                                        <div class="caption">
+                                            {Caption}
+                                        </div>
+                                    {/block:Caption}
+                                </div>
+                            {/block:Audio}
+                            {block:More}
+                                <div class="more">
+                                    <button type="button" id="buttonmore" class="btn-default btn-click">
+                                        <a href="{Permalink}">Keep Reading</a>
+                                    </button>
+                                </div>
+                            {/block:More}
+                            {block:HasTags}
+                                <div class="tags">
+                                    {block:Tags}
+                                        <a href="{TagURL}">#{Tag} </a>
+                                    {/block:Tags}
+                                </div>
+                            {/block:HasTags}
+                            {block:PostNotes}
+                                <div class="note">
+                                    {PostNotes}
+                                </div>
+                            {/block:PostNotes}
+                            <div id="actions">
+                                <a id="notes" href="{Permalink}">Notes {NoteCount}</a>
+                                <div id="links">
+                                    <div id="share">
+                                        <div class="actions-links">
+                                            <div class="popup" onclick="sharePost({PostID})">
+                                                <a>Share</a>
+                                                <span class="popuptext" id="popup">
+                                                    <a href='https://facebook.com/sharer.php?u=
+                                                        {URLEncodedPermalink}&t={URLEncodedTitle}'
+                                                    target="_blank">Facebook</a>
+                                                    <br><br>
+                                                    <a href='https://twitter.com/intent/tweet?text=
+                                                        {URLEncodedTweetSummary}' target="_blank">Twitter</a>
+                                                    <br><br>
+                                                    <a href='https://reddit.com/submit?url=
+                                                        {URLEncodedPermalink}' target="_blank">Reddit</a>
+                                                    <br><br>
+                                                    <a href='mailto:?subject={URLEncodedShareString}&body=
+                                                        {URLEncodedMailSummary}'>E-mail</a>
+                                                    <br><br>
+                                                    <a href='{EmbedUrl}' target="_blank">Embed</a>
+                                                    <br>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="actions-links">
+                                        <a href="{ReblogURL}">Reblog</a>
+                                    </div>
+                                    <div class="actions-links">
+                                        <a class="like-b" href="#">{LikeButton}
+                                            <span class="b">Like</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/block:Posts}
+                {block:NoPosts}
+                    <div id="no-posts">
+                        <h3>You're wasting time...</h3>
+                        <img src="https://static.tumblr.com/pgcfs50/nqypxwb78/no-posts.gif" />
+                    </div>
+                {/block:NoPosts}
+            </div>
+            {block:IfInfiniteScroll}
+                <div class="mobile">
+                    <button id="load-more" class="show-loader btn-click" onclick="showNext()">Load more</button>
+                </div>
+            {/block:IfInfiniteScroll}
+            {block:IfNotInfiniteScroll}
+                {block:Pagination}
+                    <div id="pagination">
+                        {block:PreviousPage}
+                            <a href="{PreviousPage}" class="btn-default btn-pagination btn-click">Previous</a>
+                        {/block:PreviousPage}
+                        {block:JumpPagination length="5"}
+                            {block:CurrentPage}
+                                <span class="current_page">{PageNumber}</span>
+                            {/block:CurrentPage}
+                            {block:JumpPage}
+                                <a class="jump_page" href="{URL}">{PageNumber}</a>
+                            {/block:JumpPage}
+                        {/block:JumpPagination}
+                        {block:NextPage}
+                            <a href="{NextPage}" class="btn-default btn-pagination btn-click">Next</a>
+                        {/block:NextPage}
+                    </div>
+                {/block:Pagination}
+            {/block:IfNotInfiniteScroll}
+        </div>
+        <div id="mybtn" class="column side-buttons btn-click">
+            <div id="side-button2" class="side-button-styles" onclick="toggleModal('md02')">
+                <span class="text-button2">{text:Right Button Label}</span>
+            </div>
+        </div>
+        <div id="md01" class="modal">
+            <div class="modal-content">
+                <img src="{image:Left Popup GIF}" />
+                <span class="close" onclick="toggleModal('md01')">
+                    💸
+                </span>
+            </div>
+        </div>
+        <div id="md02" class="modal">
+            <div class="modal-content">
+                <img src="{image:Right Popup GIF}" />
+                <span class="close" onclick="toggleModal('md02')">
+                    💸
+                </span>
+            </div>
+        </div>
+        <div id="mobile-footer" class="column mobile">
+            <div class="row row-description mobile">
+                {block:Description}
+                    <p id="description">{Description}</p>
+                {/block:Description}
+            </div>
+            <div class="row row-sm mobile">
+                <div class="box-links">
+                    <div id="box-link1" class="draggable box-style">
+                        <a href="{text:Box Link 1}" target="_blank">
+                            <span>{text:Box Label 1}</span>
+                        </a>
+                    </div>
+                    <div id="box-link2" class="draggable box-style">
+                        <a href="{text:Box Link 2}" target="_blank">
+                            <span>{text:Box Label 2}</span>
+                        </a>
+                    </div>
+                    <div id="box-link3" class="draggable box-style">
+                        <a href="{text:Box Link 3}" target="_blank">
+                            <span>{text:Box Label 3}</span>
+                        </a>
+                    </div>
+                    <div id="box-link4" class="draggable box-style">
+                        <a href="{text:Box Link 4}" target="_blank">
+                            <span>{text:Box Label 4}</span>
+                        </a>
+                    </div>
+                    <div id="hidden-gif">
+                        <img id="hidden-img" src="{image:Hidden Gif}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
