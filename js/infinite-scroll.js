@@ -61,18 +61,26 @@ const getAsync = (url, callback) => {
 
 $(function() {
     const checkDevice = () => {
+        console.log(":: checkDevice()");
         const scroll = $(document).height() - $(window).height() > 0;
         let windowWidth = $(window).width();
+        console.log(windowWidth);
         if (scroll) windowWidth = windowWidth + 17;
+        console.log(windowWidth);
         if (windowWidth >= 675) {
             _mobile = false;
             $('#load-more').css("display", "none");
+            console.log("*** DESKTOP ***");
         } else {
             _mobile = true;
             if (_exec && !_end) $('#load-more').css("display", "flex");
+            console.log("*** MOBILE ***");
         }
+        console.log("_mobile: " + _mobile);
     }
     checkDevice();
+    console.log(":: Window Width");
+    console.log($(window).width());
     $(window).scroll(() => {
         if ($(window).scrollTop() >= $(document).height() - $(window).height() && !_mobile) {
             showNext();

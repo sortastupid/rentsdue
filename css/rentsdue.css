@@ -344,9 +344,9 @@ h1 {
 }
 
 .title-bar {
-    white-space: nowrap;
     height: 20px;
-    width: 100%;
+    position: relative;
+    overflow: hidden;
     color: white;
     background: grey;
     line-height: 1.25em;
@@ -841,9 +841,12 @@ h1 {
     background: slateblue;
 }
 
+#no-posts {
+    padding: 5px 10px;
+}
+
 #no-posts img {
     width: 100%;
-    padding: 20px;
 }
 
 #no-results {
@@ -1119,24 +1122,29 @@ h1 {
 .tmblr-iframe--desktop-loggedin-controls,
 .iframe-controls--desktop {
     top: 100% !important;
-    margin-top: -140px;
-    margin-right: -143px;
-    -webkit-transform: scale(0.75, 0.75) rotate(90deg);
-    -ms-transform: scale(0.75, 0.75) rotate(90deg);
-    transform: scale(0.75, 0.75) rotate(90deg);
+    -webkit-transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+    -ms-transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+    transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
+    transform-origin: right;
 }
 
 
 /***** LAYOUT BREAKPOINTS *****/
-
-@media (max-width: 299px) {
-    header,
-    .main {
-        display: none;
+@media (max-width: 300px) {
+    #links {
+        flex-direction: column;
+    }
+    #links a {
+        margin: auto;
+    }
+    .like-b {
+        width: fit-content;
     }
 }
 
-@media (min-width: 300px) and (max-width: 350px) {
+@media (max-width: 350px) {
     .mobile {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1182,9 +1190,11 @@ h1 {
     }
     .main {
         width: 90%;
-        /* margin: auto;*/
         padding: 0px 20px 20px 20px;
         display: block;
+    }
+    .main-posts {
+        margin-right: 10px;
     }
     .post {
         width: 100%;
@@ -1210,6 +1220,9 @@ h1 {
         height: 85px;
         font-size: 1.5em;
         text-align: center;
+    }
+    .photoset {
+        width: 100%;
     }
     .modal-content {
         max-width: 300px;
@@ -1273,6 +1286,9 @@ h1 {
         padding: 0px 20px 20px 20px;
         display: block;
     }
+    .main-posts {
+        margin-right: 5px;
+    }
     .post {
         width: 100%;
     }
@@ -1297,6 +1313,9 @@ h1 {
         height: 85px;
         font-size: 1.5em;
         text-align: center;
+    }
+    .photoset {
+        width: 100%;
     }
     .modal-content {
         overflow: auto;
@@ -1337,11 +1356,12 @@ h1 {
     .tmblr-iframe--desktop-loggedin-controls,
     .iframe-controls--desktop {
         top: 100% !important;
-        margin-top: -118px;
-        margin-right: -146px;
-        -webkit-transform: scale(0.6, 0.6) rotate(90deg);
-        -ms-transform: scale(0.6, 0.6) rotate(90deg);
-        transform: scale(0.6, 0.6) rotate(90deg);
+        -webkit-transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+        -ms-transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+        transform: scale(0.6) rotate(90deg) translate(-40px, 20px);
+        -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+        transform-origin: right;
     }
 }
 

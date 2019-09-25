@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    const vw = $(window).width();
-
     const setTitle = () => {
         let t_width = $("#title").width();
         const title = document.querySelector('#title');
@@ -29,7 +27,7 @@ $(document).ready(function() {
         } else {
             $(".spin-up").css("animation-play-state", "paused");
         }
-
+        const vw = $(window).width();
         let title = $("h1").text();
         $(".spin-left p").text(title.concat(" !!! "));
         $(".spin-left p").css("width", "fit-content");
@@ -55,7 +53,7 @@ $(document).ready(function() {
     }
 
     const setLinks = () => {
-        $(".draggable").draggable();
+        $(".draggable").draggable({ containment: "window" });
         $(".row-sm").css("height", $("#hidden-gif > img")[0].height);
     }
 
