@@ -290,22 +290,26 @@
                                 </div>
                             {/block:Text}
                             {block:Photo}
-                                <div class="photo">
-                                    <a href="{Permalink}">
-                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                                    </a>
-                                    {Caption}
-                                </div>
+                                {block:HighRes}
+                                    <div class="photo">
+                                        <a href="{Permalink}">
+                                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                                        </a>
+                                        {Caption}
+                                    </div>
+                                {/block:HighRes}
                             {/block:Photo}
                             {block:Panorama}
-                                <div class="panorama">
-                                    {LinkOpenTag}
-                                        <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                                    {LinkCloseTag}
-                                    {block:Caption}
-                                        <div class="caption">{Caption}</div>
-                                    {/block:Caption}
-                                </div>
+                                {block:HighRes}
+                                    <div class="panorama">
+                                        {LinkOpenTag}
+                                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                                        {LinkCloseTag}
+                                        {block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </div>
+                                {/block:HighRes}
                             {/block:Panorama}
                             {block:Photoset}
                                 <div class="photoset">
@@ -325,16 +329,17 @@
                             {/block:Quote}
                             {block:Link}
                                 <div class="link">
-                                    {block:Thumbnail}
-                                        <a href="{URL}" {Target} ></a>
-                                        <img src="{Thumbnail-HighRes}" />
-                                    {/block:Thumbnail}
-                                    <div id="title-excerpt">
-                                        {Name}
-                                    </div>
-                                    {block:Excerpt}
-                                        <div id="excerpt">{Excerpt}</div>
-                                    {/block:Excerpt}
+                                    <a href="{URL}" {Target} >
+                                        {block:Thumbnail}
+                                            <img src="{Thumbnail-HighRes}" />
+                                        {/block:Thumbnail}
+                                            <div id="title-excerpt">
+                                                {Name}
+                                            </div>
+                                        {block:Excerpt}
+                                            <div id="excerpt">{Excerpt}</div>
+                                        {/block:Excerpt}
+                                    </a>
                                 </div>
                             {/block:Link}
                             {block:Chat}
