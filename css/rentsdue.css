@@ -540,7 +540,7 @@ h1 {
 
 .post img,
 .post blockquote figure {
-    width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -721,6 +721,11 @@ h1 {
 
 
 /***** POST TYPES *****/
+
+.photo > a {
+    display: flex;
+    justify-content: center;
+}
 
 .photoset a {
     overflow-wrap: break-word;
