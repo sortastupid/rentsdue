@@ -693,6 +693,8 @@ h1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    cursor: pointer;
+    text-transform: uppercase;
     overflow: hidden;
 }
 
@@ -708,6 +710,7 @@ h1 {
     bottom: 0;
     right: 0;
     z-index: 2;
+    height: 100%;
     opacity: 0;
 }
 
