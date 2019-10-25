@@ -63,10 +63,7 @@ header {
 
 /***** POST TYPES *****/
 .photoset {
-    margin: 0 auto;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    margin-bottom: 10px;
 }
 .chat-lines {
     list-style: none;
